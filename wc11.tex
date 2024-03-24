@@ -48,7 +48,35 @@
   Note: All figures are taken from \href{https://www.geogebra.org/m/cnqdjcph}{beckykwarren's geogebra page}.
 
   \begin{solution}
-    % Enter your solution here.
+    
+    Base Case: \\
+    We have to show that $P(n)$ is true for all integers $n$ greater than 1.\\
+    For the first case, we have $P(n)=1$, so $P(1)=(1)^3$ is again 1, so the base case holds true.\\
+    Inductive Step:\\
+    For the inductive hypothesis we assume that for some arbitrary positive integer k, the pyramid with $K$ layers require $K^3$ coins.\\
+    We know that the cumulative sum of coins in $K$ layers is $K^3$.\\
+    To show that a pyramid with $(K+1)$ layers require $(K+1)^3$ coins.\\
+    We know that for $K$ layers, there will be $K^3$ coins, however we do not know how many coins will be there in $K+1$ layers.\\
+    To derive the formula for number of cumulative coins, we observe a pattern in the information given to us.\\
+    Layer1= 1 coin = 1\\
+    Layer2= 1(6) + Layer1 = 7\\
+    Layer3= 2(6) + Layer2 = 19\\
+    Layer4= 3(6) + Layer3 = 37\\
+    Layer5= 4(6) + Layer4 = 61\\
+    To find the total number of coins in one layer, we need to find the sum of all the coins in all previous layers.Writing the pattern in a general form to find the total number of coins in n layer:\\
+    $L_n$= 6(n-1) + $L_{n-1}$\\ 
+     We know that the sum of the natural numbers from 1 upto n can be given by $S_n=\frac{n(n+1)}{2}$ but in this case, we need the formula for $n-1$ integers because n is already known.\\
+    $S_{n-1} = \frac{n(n-1)}{2}$\\
+    Then $L_n = 6(S_{n-1}) +1$\\
+    $6.\frac{n(n-1)}{2} + 1$ which can be simplified to $3n^2-3n+1$. Substituting this formula to find out how many coins are there in $(k+1)^3$ layers\\
+    $K^3 + 3(K+1)^2 -3(K+1) +1 = (K+1)^3$\\
+    $K^3 + 3(K^2 + 2K + 1) - 3(K + 1) + 1$\\
+    $K^3 + 3K^2 + 6K + 3 - 3K - 3 + 1$\\
+    $K^3 + 3K^2 + 6K - 3K + 3 - 3 + 1$\\
+    $K^3 + 3K^2 + 3K + 1$ which is equivalent to $(K+1)^3$\\
+    We have completed the basis step and the inductive step, so by mathematical induction we know that P(n) is true for all positive integers n. That is, we have proven that $P(n)$ = $n^3$ for all positive integers n
+
+
   \end{solution}
 
 
